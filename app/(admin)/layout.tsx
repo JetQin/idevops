@@ -9,7 +9,7 @@ import Button from '@tailus-ui/Button';
 import { WorkspaceIcon } from '@components/WorkspaceIcon';
 import { twMerge } from 'tailwind-merge';
 import * as Link from '@components/Link';
-
+import { ThemeSwitcher } from '@components/ThemeSwitcher';
 import Separator from '@tailus-ui/Separator';
 import { Notifications } from '@components/Notifications';
 import { UserDropdown } from '@components/UserDropdown';
@@ -106,8 +106,8 @@ export default function DashboardLayout({
             onClick={() => setIsMenuOpen(false)}
           />
         )}
-        <main className={twMerge('relative h-screen overflow-auto border-x bg-[--ui-bg] transition-transform duration-300 lg:ml-auto lg:mr-1 lg:mt-1 lg:h-[calc(100vh-4px)] lg:w-[calc(100vw-18rem)] lg:rounded-t-[--card-radius] lg:border-t lg:shadow-md lg:shadow-gray-600/10', isMenuOpen && 'translate-x-72 lg:translate-x-0')}>
-           <div className="feedback-bg sticky top-0 z-10 flex items-center justify-between border-b px-6 py-3 lg:py-4">
+        <main className={twMerge('lg:ml-auto lg:w-[calc(100vw-16rem)]', isMenuOpen && 'pointer-events-none opacity-50')}>
+           <div className="sticky top-0 z-10 flex items-center justify-between border-b px-6 py-3 lg:py-4">
                 <div className="flex items-center gap-2">
                     <Button.Root
                         size="sm"
@@ -125,12 +125,12 @@ export default function DashboardLayout({
                     </Title>
                 </div>
                 <div className="flex items-center gap-4">
-                    {/* <ThemeSwitcher /> */}
+                    <ThemeSwitcher />
                     <Notifications />
                     <UserDropdown />
                 </div>
             </div>
-            <div className="feedback-bg p-6 space-y-6">
+            <div className="p-6 space-y-6">
                 {children}
             </div>
         </main>

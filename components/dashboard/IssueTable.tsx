@@ -55,7 +55,7 @@ export const Issues = () => {
   }, []);
 
   return ( isClient ?
-    (<Card variant="outlined" className="overflow-x-auto lg:overflow-clip">
+    (<Card variant="outlined" className="feedback-bg overflow-x-auto lg:overflow-clip">
       <div className="sticky left-0 mb-6">
         <Title as="h2" size="lg" weight="medium">
           Issues

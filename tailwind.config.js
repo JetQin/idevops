@@ -4,7 +4,8 @@ import { palettes, grays, rounded, components, animations, shade } from '@tailus
 import { palettes } from "@tailus/themer-plugins"
 
 
-export default {
+module.exports = {
+  darkMode: 'class',
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
