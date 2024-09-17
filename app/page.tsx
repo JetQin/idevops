@@ -1,101 +1,92 @@
-import Image from "next/image";
+"use client";
+
+import Button from '@tailus-ui/Button';
+import { Display, Text, Title, Kbd, Caption } from '@tailus-ui/typography';
+import { Lock, Plus } from 'lucide-react';
+import SiteHeader from '@components/SiteHeader';
+
+const links = [
+    { href: '/', label: 'Features' },
+    { href: '/', label: 'Enterprise' },
+    { href: '/', label: 'Docs' },
+    { href: '/examples/pricing', label: 'Pricing' }
+];
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    return (
+        <>
+            <SiteHeader />
+            <main>
+                <section className="pb-40 pt-32 lg:pt-16">
+                    <div className="mx-auto max-w-6xl px-6">
+                        <Display align="center" weight="bold" className="text-4xl md:text-5xl">
+                            Ecommerce, Simplified
+                        </Display>
+                        <Text className="mx-auto mb-8 mt-6 max-w-2xl" size="lg" align="center">
+                            Asperiores labore saepe veniam, quo in fugit? Consequuntur doloribus totam dolorem, nihil provident ratione nostrum lorem.
+                        </Text>
+                        <div className="flex justify-center gap-3">
+                            <Button.Root href="/register">
+                                <Button.Label>Start Building</Button.Label>
+                            </Button.Root>
+                            <Button.Root variant="outlined" intent="gray" href="/register">
+                                <Button.Label>Learn More</Button.Label>
+                            </Button.Root>
+                        </div>
+                        <Caption className="mb-8 mt-6" align="center">
+                            Or Press <Kbd>G</Kbd> anytime to get started
+                        </Caption>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+                        <div data-rounded="2xlarge" className="mx-auto mb-12 mt-12 max-w-5xl rounded-[--card-radius] p-px shadow-xl shadow-gray-950/5 sm:mb-16 sm:mt-20 md:mb-20 dark:border-transparent dark:shadow-gray-950/50">
+                            <div className="space-y-1 rounded-[calc(var(--card-radius)-1px)] border bg-[--ui-bg] p-1 backdrop-blur-2xl">
+                                <div className="flex items-center justify-between px-3">
+                                    <div className="flex gap-1.5">
+                                        <div aria-hidden className="size-2.5 rounded-full border border-gray-300 bg-gray-200/50 dark:border-white/5 dark:bg-white/10"></div>
+                                        <div aria-hidden className="size-2.5 rounded-full border border-gray-300 bg-gray-200/50 dark:border-white/5 dark:bg-white/10"></div>
+                                        <div aria-hidden className="size-2.5 rounded-full border border-gray-300 bg-gray-200/50 dark:border-white/5 dark:bg-white/10"></div>
+                                    </div>
+                                    <div data-rounded="large" className="relative flex h-6 w-32 items-center justify-center gap-4 rounded-[--card-radius] bg-gray-200/50 px-3 text-xs text-[--caption-text-color] sm:w-56 dark:bg-[--ui-bg]">
+                                        <Lock className="absolute left-3 size-2.5" />
+                                        https://ui.tailus.io
+                                    </div>
+                                    <div className="flex size-6 rounded-full border bg-[--ui-bg]">
+                                        <Plus aria-hidden className="m-auto size-4 text-[--caption-text-color]" />
+                                    </div>
+                                </div>
+                                <img className="aspect-[4/3] rounded-[calc(var(--card-radius)-5px)] border dark:hidden" src="/images/showcase/card.png" alt="" />
+                                <img className="hidden aspect-[4/3] rounded-[calc(var(--card-radius)-5px)] border dark:block dark:border-white/5" src="/images/showcase/card-layout-dark.webp" alt="" />
+                            </div>
+                        </div>
+                        <div className="mx-auto max-w-3xl">
+                            <Title size="lg" align="center" as="div" weight="normal">
+                                Trusted by your favorite top 10 Tech companies
+                            </Title>
+                            <Title as="h2" className="sr-only">
+                                Customers
+                            </Title>
+                            <div className="mt-12 space-y-4 opacity-75">
+                                <div className="mt-12 flex flex-wrap items-center justify-center gap-6 brightness-0 grayscale sm:gap-x-12 md:gap-x-20 dark:invert">
+                                    <img src="https://ampire.netlify.app/images/clients/lilly.png" alt="" className="h-10 w-auto" />
+                                    <img src="https://ampire.netlify.app/images/clients/coty.svg" alt="" className="h-10 w-auto" />
+                                    <img src="https://ampire.netlify.app/images/clients/ge.svg" alt="" className="h-9 w-auto" />
+                                    <img src="https://ampire.netlify.app/images/clients/microsoft.svg" alt="" className="h-10 w-auto" />
+                                    <img src="https://ampire.netlify.app/images/clients/airbnb.svg" alt="" className="h-10 w-auto" />
+                                    <img src="https://ampire.netlify.app/images/clients/coty.svg" alt="" className="h-10 w-auto lg:hidden" />
+                                    <img src="https://ampire.netlify.app/images/clients/ge.svg" alt="" className="h-9 w-auto lg:hidden" />
+                                </div>
+                                <div className="mt-12 hidden brightness-0 grayscale lg:flex lg:flex-wrap lg:items-center lg:justify-center lg:gap-20 dark:invert">
+                                    <img src="https://ampire.netlify.app/images/clients/coty.svg" alt="" className="h-10 w-auto" />
+                                    <img src="https://ampire.netlify.app/images/clients/ge.svg" alt="" className="h-9 w-auto" />
+                                    <img src="https://ampire.netlify.app/images/clients/microsoft.svg" alt="" className="h-10 w-auto" />
+                                    <img src="https://ampire.netlify.app/images/clients/airbnb.svg" alt="" className="h-10 w-auto" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </>
+    );
 }
+
+

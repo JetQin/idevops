@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
+    "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -18,7 +19,11 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@components/*": ["./components/*"],
+      "@utilities/*": ["./components/utilities/*"],
+      "@tailus-ui/*": ["./components/tailus-ui/*"],
+      "@lib/*": ["./lib/*"],
+      "@types/*": ["./types/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
